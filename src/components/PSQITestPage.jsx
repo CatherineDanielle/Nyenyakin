@@ -62,9 +62,8 @@ const PSQITestPage = () => {
     }
 
     console.log('Form data to send:', formData);
-    // Uncomment when backend is ready
-    /*
-    fetch('http://localhost:5000/api/psqi-test', {
+    
+    fetch('http://localhost:5000/predict', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
@@ -72,7 +71,7 @@ const PSQITestPage = () => {
       .then(response => response.json())
       .then(data => console.log('Success:', data))
       .catch(error => console.error('Error:', error));
-    */
+    
   };
 
   const inputClass = (name) =>
@@ -195,7 +194,7 @@ const PSQITestPage = () => {
             {/* Submit */}
             <div className="flex justify-center pt-4">
               <button
-                //onClick={handleSubmit}
+                onClick={handleSubmit}
                 className="px-12 py-3 bg-blue-500 text-white rounded-full font-medium hover:bg-blue-600 transition-all duration-300 hover:shadow-lg"
               >
                 Check
