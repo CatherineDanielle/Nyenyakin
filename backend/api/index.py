@@ -1,8 +1,6 @@
 import pickle
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from werkzeug.wrappers import Request, Response
 
 with open('model.pkl', 'rb') as f:
     scaler, model = pickle.load(f)
@@ -45,11 +43,6 @@ def predict():
     prediction = model.predict(input_features)[0]
     # print(prediction)
     return jsonify({'prediction': str(prediction)})
-
-def handler(environ, start_response): 
-          return DispatcherMiddleware(Flask('dummy'), {
-        "/api": app
-    })(environ, start_response)
 
 if __name__ == "__main__":
     app.run(debug=True)
