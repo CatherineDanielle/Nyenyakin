@@ -9,7 +9,7 @@ with open('model.pkl', 'rb') as f:
     scaler, model = pickle.load(f)
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=['https://nyenyakin.netlify.app'])
 
 def preprocess_data(data):
     weight = float(data['weight'])
