@@ -29,19 +29,19 @@ def preprocess_data(data):
     neck = 1 if data['neckPain'].lower() == "yes" else 0
     head = 1 if data['headache'].lower() == "yes" else 0
 
-    features = pd.DataFrame([{
-        'age': data['age'],
-        'gender': gender,
-        'coffeeIntake': data['coffeeIntake'],
-        'teaIntake': data['teaIntake'],
-        'electronicsUsage': data['electronicsUsage'],
-        'maritalStatus': marital,
-        'neckPain': neck,
-        'bmi': bmi,
-        'headache': head
-    }])
+    features = [
+        data['age'],
+        gender,
+        data['coffeeIntake'],
+        data['teaIntake'],
+        data['electronicsUsage'],
+        marital,
+        neck,
+        bmi,
+        head
+    ]
 
-    return features
+    return [features]
 
 @app.route('/')
 def health_check():
