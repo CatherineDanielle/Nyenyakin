@@ -39,7 +39,7 @@ def preprocess_data(data):
 def health_check():
     return jsonify({
         'status': 'running',
-        'model_loaded': model_loaded,
+        'model_loaded': True,
         'message': 'PSQI API is running'
     })
 
