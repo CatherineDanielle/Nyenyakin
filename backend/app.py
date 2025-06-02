@@ -34,6 +34,14 @@ def preprocess_data(data):
 
     return [features]
 
+@app.route('/')
+def health_check():
+    return jsonify({
+        'status': 'running',
+        'model_loaded': model_loaded,
+        'message': 'PSQI API is running'
+    })
+
 @app.route('/api/psqi-test', methods=['POST'])
 def predict():
 
