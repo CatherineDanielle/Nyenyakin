@@ -1,6 +1,5 @@
 import pickle
 import os
-import pandas as pd
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
