@@ -5,8 +5,15 @@ from flask_cors import CORS
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 from werkzeug.wrappers import Request, Response
 
-with open('model.pkl', 'rb') as f:
-    scaler, model = pickle.load(f)
+scaler, model = None, None
+model_loaded = False
+
+try:
+    with open('model.pkl', 'rb') as f:
+        scaler, model = pickle.load(f)
+        model_loaded = True
+except Exception as e:
+    print(f"Model failed to load: {e}")
 
 app = Flask(__name__)
 CORS(app, origins=['https://nyenyakin.netlify.app'])
@@ -39,6 +46,7 @@ def preprocess_data(data):
 def health_check():
     return jsonify({
         'status': 'running',
+        'model_loaded': model_loaded,
         'message': 'PSQI API is running'
     })
 
