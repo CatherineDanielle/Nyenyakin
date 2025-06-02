@@ -51,11 +51,6 @@ def predict():
     prediction = model.predict(input_features)[0]
     return jsonify({'prediction': str(prediction)})
 
-def handler(environ, start_response): 
-    return DispatcherMiddleware(Flask('dummy'), {
-        "/api": app
-    })(environ, start_response)
-
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)
