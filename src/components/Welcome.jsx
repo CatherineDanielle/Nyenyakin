@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Test from '../pages/Test';
 
 const Welcome = () => {
+  const navigate = useNavigate();
+  
   const handleCheckHereClick = () => {
-    // Navigate to test page
-    window.location.href = '/test';
+    navigate('/test');
   };
 
   return (
@@ -26,7 +26,6 @@ const Welcome = () => {
           check here
         </button>
       </div>
-
       {/* Right side - Decorative elements */}
       <div>
         {/* Large logo with decorative elements */}
@@ -36,7 +35,6 @@ const Welcome = () => {
             alt="Menyakin Logo" 
             className="w-100 h-100"
           />
-          
         </div>
       </div>
     </section>
