@@ -2,14 +2,15 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Articlebento = () => {
+
+  const navigate = useNavigate();
+  
   const handleViewAllClick = () => {
-    // Navigate to sleep tips page
-    window.location.href = '/tips';
+    navigate('/tips');
   };
 
   const handleArticleClick = (articleId) => {
-    // Navigate to specific article
-    window.location.href = `/tips`;
+    navigate('/tips');
   };
 
   const articles = [
