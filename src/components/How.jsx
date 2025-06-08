@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom';
 const How = () => {
   const [isButtonPressed, setIsButtonPressed] = useState(false);
 
+  const navigate = useNavigate();
+  
   const handleTakeTestClick = () => {
     setIsButtonPressed(true);
-    // Small delay to show the fill effect before navigation
     setTimeout(() => {
-      window.location.href = '/test';
+      navigate('/test');
     }, 150);
   };
 
