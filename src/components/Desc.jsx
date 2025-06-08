@@ -4,9 +4,10 @@ import { useNavigate } from 'react-router-dom';
 const Desc = () => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const navigate = useNavigate();
+  
   const handleLearnMoreClick = () => {
-    // Navigate to about PSQI page or show more information
-    window.location.href = '/about';
+    navigate('/about');
   };
 
   return (
