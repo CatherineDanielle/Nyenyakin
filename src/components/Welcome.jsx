@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Test from './pages/Test';
+import Test from '../pages/Test';
 
 const Welcome = () => {
   const handleCheckHereClick = () => {
