@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Test from './pages/Test';
+
 const Welcome = () => {
   const handleCheckHereClick = () => {
     // Navigate to test page
