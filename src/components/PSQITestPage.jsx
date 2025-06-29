@@ -74,7 +74,7 @@ const PSQITestPage = () => {
     try {
       console.log('Form data to send:', formData);
       
-      const response = await fetch('https://nyenyakin-production.up.railway.app/api/psqi-test', {
+      const response = await fetch('nyenyakin-production-34ed.up.railway.app/api/psqi-test', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
